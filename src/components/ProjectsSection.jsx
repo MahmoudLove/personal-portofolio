@@ -85,7 +85,7 @@ const ProjectsSection = () => {
                     target="_blank"
                     className="bg-red-500 p-[1.5px] rounded-md text-white"
                   >
-                    Demo
+                    DEMO
                   </a>
                 </div>
               </div>
