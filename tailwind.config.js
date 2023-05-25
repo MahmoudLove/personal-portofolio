@@ -12,7 +12,22 @@ module.exports = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      keyframes: {
+        navItemFade: {
+          '0%': {
+            opacity: '0',
+            transform: 'translate(50px)',
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translate(0)',
+          },
+        },
+      },
+      animation: {
+        navAnimation: 'navItemFade 0.7s ease forwads',
+      },
     },
   },
   plugins: [],
-}
+};

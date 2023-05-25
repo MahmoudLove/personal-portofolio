@@ -2,26 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: 'oswald';
+  font-weight: 400;
+  src: local('oswald regular'),
+    url('../assets//fonts/oswald-regular-webfont.woff2') format('woff2'),
+    url('../assets//fonts/oswald-regular-webfont.woff2') format('woff');
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* write any number on font weight but just use it later and any name for the font  */
+@font-face {
+  font-family: 'oswald';
+  font-weight: 300;
+  src: url('../assets//fonts/oswald-light-webfont.woff2') format('woff2'),
+    url('../assets//fonts/oswald-light-webfont.woff2') format('woff');
+}
+@font-face {
+  font-family: 'oswald';
+  font-weight: 800;
+  src: url('../assets//fonts/oswald-bold-webfont.woff2') format('woff2'),
+    url('../assets//fonts/oswald-bold-webfont.woff2') format('woff');
+}
+@font-face {
+  font-family: 'oswald';
+  font-weight: 700;
+  src: url('../assets//fonts/oswald-semibold-webfont.woff2') format('woff2'),
+    url('../assets//fonts/oswald-semibold-webfont.woff2') format('woff');
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'oswald', sans-serif;
+  background: rgba(2, 12, 27, 1);
+  color: rgb(250, 224, 92);
+}
+@keyframes navItemFade {
+  0% {
+    opacity: 0;
+    transform: translate(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes float {
+  from {
+    transform: translate(-50%, 0px);
+  }
+  65% {
+    transform: translate(-50%, 10px);
+  }
+  to {
+    transform: translate(-50%, 0px);
+  }
+}
+.navAnimation {
+  animation: navItemFade 0.5s ease forwards 0.5s;
+}
+hr {
+  background: linear-gradient(to right, orange 0%, purple 100%);
+  border: 0;
+  height: 1px;
+}
+.sectionHeader {
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 2rem;
+  margin: 0.5rem 0 1.5rem 0;
+  position: relative;
+}
+.sectionHeader::after {
+  content: '';
+  display: block;
+  height: 5px;
+  width: 50%;
+  background: black;
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translateX(-50%);
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.rotator {
+  position: absolute;
+  z-index: -1;
+  height: 229px;
+  width: 174px;
+  top: -2px;
+  left: -2px;
+  /* animation: rotate 5s linear infinite; */
+
+  background: linear-gradient(to right, orange 0%, purple 100%);
+}
+.skillName {
+  background: linear-gradient(to right, orange 0%, purple 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+.floating {
+  position: absolute;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.696);
+  border-radius: 50%;
+  color: black;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+  transition: bottom 0.5s ease-in-out;
+}
+.projectsText {
+  position: absolute;
+  width: 100%;
+  height: 80%;
+  background: white;
+  bottom: -100%;
+  left: 0;
+  color: black;
+  z-index: 2;
+  transition: bottom 0.5s ease-in-out;
+}
+.projectParent {
+  border-radius: 65px 64px 0 0;
+}
+.projectParent img {
+  border-radius: 65px 64px 0 0;
+}
+.projectParent:hover .projectsText {
+  bottom: 0;
+}
+.projectParent:hover .floating {
+  bottom: 85%;
 }
