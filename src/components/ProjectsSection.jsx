@@ -6,16 +6,16 @@ const ProjectsSection = () => {
   const projectsData = [
     {
       name: 'Lotus Store',
-      para: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate suscipit tenetur, omnis adipisci vel incidunt soluta excepturi unde Mahmoud blackosis',
+      para: 'E-commerce Web site for A Beatiful brand with Next.js as a front end frame work and Tail wind for css  and Graphql as a backend - this project was team work-',
       float: 'next',
       src: '/lotus.jpg',
-      codeLink: '#',
+      codeLink: 'https://github.com/MahmoudLove/lotus-project-final.git',
       demoLink: 'https://www.lotusbymariam.beauty/',
       depend: ['Next', 'tailWind', 'graphQl'],
     },
     {
       name: 'Shehata Store',
-      para: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate suscipit tenetur, omnis adipisci vel incidunt soluta excepturi unde Mahmoud blackosis',
+      para: 'E-commerce Application for a pharmacy with Next.js as front end frame work and tailwind for css and mongoDB as back end -this is proto type project-',
       float: 'next',
       src: '/shehata.jpg',
       codeLink: 'https://github.com/MahmoudLove/shehata-repo-2',
@@ -24,7 +24,7 @@ const ProjectsSection = () => {
     },
     {
       name: 'PregnaCate',
-      para: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate suscipit tenetur, omnis adipisci vel incidunt soluta excepturi unde Mahmoud blackosis',
+      para: 'Gradution project Website for pharmacy student consist of 4 html pages with map functionality and Accordian using Vanilla JavaScript ',
       float: 'JS',
       src: '/pregnaCare.jpg',
       codeLink: 'https://github.com/Epca-PregnaCare/_Egypt',
@@ -33,7 +33,7 @@ const ProjectsSection = () => {
     },
     {
       name: 'ToDo App',
-      para: ' Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate suscipit tenetur, omnis adipisci vel incidunt soluta excepturi unde Mahmoud blackosis',
+      para: 'Todo Application using next.js and drag and drop functionality using React-dnd and utilizing local storage for data persistency ',
       float: 'next',
       src: '/toDo.jpg',
       codeLink: 'https://github.com/MahmoudLove/toDo-app',
@@ -42,14 +42,14 @@ const ProjectsSection = () => {
     },
   ];
   return (
-    <div className="mt-2 mb-10" name="projects">
+    <div className="mt-2 mb-10 sm:mb-14" name="projects">
       <SectionHeader>Latest Projects</SectionHeader>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-x-3 gap-y-6 justify-items-center">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-x-3 gap-y-6 justify-items-center">
         {projectsData.map((project) => {
           return (
             <div
               key={project.name}
-              className="projectParent   overflow-hidden   relative w-[170px] h-[280px] "
+              className="projectParent   overflow-hidden   relative w-[170px] h-[280px] sm:w-[250px] sm:h-[350px] "
             >
               <span className="floating">{project.float}</span>
               <Image

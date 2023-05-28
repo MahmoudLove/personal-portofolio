@@ -62,6 +62,12 @@ hr {
   background: linear-gradient(to right, orange 0%, purple 100%);
   border: 0;
   height: 1px;
+  margin-bottom: 12px;
+}
+@media (min-width: 640px) {
+  hr {
+    height: 1.5px;
+  }
 }
 .sectionHeader {
   text-transform: uppercase;
@@ -96,10 +102,15 @@ hr {
   width: 174px;
   top: -2px;
   left: -2px;
-  /* animation: rotate 5s linear infinite; */
-
   background: linear-gradient(to right, orange 0%, purple 100%);
 }
+@media (min-width: 640px) {
+  .rotator {
+    height: 304px;
+    width: 254px;
+  }
+}
+
 .skillName {
   background: linear-gradient(to right, orange 0%, purple 100%);
   -webkit-background-clip: text;
@@ -119,6 +130,12 @@ hr {
   z-index: 2;
   animation: float 3s ease-in-out infinite;
   transition: bottom 0.5s ease-in-out;
+}
+@media (min-width: 640px) {
+  .floating {
+    padding: 8px;
+    font-size: 20px;
+  }
 }
 .projectsText {
   position: absolute;
@@ -142,4 +159,17 @@ hr {
 }
 .projectParent:hover .floating {
   bottom: 85%;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #03122b;
+}
+::-webkit-scrollbar-thumb {
+  background: #31435f;
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #202e46;
 }

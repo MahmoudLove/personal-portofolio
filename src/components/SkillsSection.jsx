@@ -38,12 +38,12 @@ const SkillsSection = () => {
   return (
     <div name="skills" className="mt-2 mb-10">
       <SectionHeader>Skills</SectionHeader>
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-x-3 gap-y-6 justify-items-center">
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-x-3 gap-y-6 justify-items-center">
         {skillsData.map((skill, index) => {
           return (
             <div
               key={index}
-              className="w-[170px] h-[225px] shadow-md shadow-[#040c16] hover:scale-110 bg-[rgba(2,12,40)] rounded-lg relative"
+              className="w-[170px] h-[225px] sm:w-[250px] sm:h-[300px] shadow-md shadow-[#040c16] hover:scale-110 bg-[rgba(2,12,40)] rounded-lg relative"
             >
               <div className="rotator rounded-lg"></div>
               <div className="rounded-lg "></div>

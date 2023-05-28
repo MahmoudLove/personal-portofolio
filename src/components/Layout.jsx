@@ -14,10 +14,12 @@ import useScrollDirection from '@/utils/useScrollDirection';
 export default function Layout() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
-  const srollDirection = useScrollDirection();
+  let srollDirection = useScrollDirection('down');
+  console.log(typeof srollDirection);
+  if (srollDirection === undefined) srollDirection = 'up';
   const navigationData = [
     {
-      section: 'hero',
+      section: 'about',
       name: 'hero',
     },
     {
@@ -106,13 +108,25 @@ export default function Layout() {
                       : ''
                   }  flex items-center gap-3 sm:hidden`}
                 >
-                  <a className="text-3xl cursor-pointer after:h-1 after:w-0 transition-all ease-in-out duration-300 hover:text-white after:block inline-block hover:after:w-full">
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/in/mahmoud-abdelkhalek-37501b232"
+                    className="text-3xl cursor-pointer after:h-1 after:w-0 transition-all ease-in-out duration-300 hover:text-white after:block inline-block hover:after:w-full"
+                  >
                     <FaLinkedin />
                   </a>
-                  <a className="text-3xl cursor-pointer after:h-1 after:w-0 transition-all ease-in-out duration-300 hover:text-white after:block inline-block hover:after:w-full">
+                  <a
+                    target="_blank"
+                    href="https://twitter.com/mahabdelkhalekk?t=AcNv9nnlaDmBp2s8Qp7UQw&s=09"
+                    className="text-3xl cursor-pointer after:h-1 after:w-0 transition-all ease-in-out duration-300 hover:text-white after:block inline-block hover:after:w-full"
+                  >
                     <FaTwitter />
                   </a>
-                  <a className="text-3xl cursor-pointer after:h-1 after:w-0 transition-all ease-in-out duration-300 hover:text-white after:block inline-block hover:after:w-full">
+                  <a
+                    target="_blank"
+                    href="https://github.com/MahmoudLove"
+                    className="text-3xl cursor-pointer after:h-1 after:w-0 transition-all ease-in-out duration-300 hover:text-white after:block inline-block hover:after:w-full"
+                  >
                     <FaGithub />
                   </a>
                 </div>
@@ -123,24 +137,27 @@ export default function Layout() {
       <ul className="fixed bottom-[5%] left-0 z-[5]">
         <li className="bg-blue-600 rounded-sm py-2 w-[80px] ml-[-60px] hover:ml-0 h-[20px] flex justify-between items-center duration-300">
           <a
+            target="_blank"
             className="flex justify-between items-center w-full text-gray-300 "
-            href="#"
+            href="https://www.linkedin.com/in/mahmoud-abdelkhalek-37501b232"
           >
             <span className="">Linkidin</span> <FaLinkedin size={20} />
           </a>
         </li>
         <li className="bg-[#333333] rounded-sm py-2 w-[80px] ml-[-60px] hover:ml-0 h-[20px] flex justify-between items-center duration-300">
           <a
+            target="_blank"
             className="flex justify-between items-center w-full text-gray-300 "
-            href="#"
+            href="https://github.com/MahmoudLove"
           >
             <span className="">Github</span> <FaGithub size={20} />
           </a>
         </li>
         <li className="bg-pink-500 rounded-sm py-2 w-[80px] ml-[-60px] hover:ml-0 h-[20px] flex justify-between items-center duration-300">
           <a
+            target="_blank"
             className="flex justify-between items-center w-full text-gray-300 "
-            href="#"
+            href="https://twitter.com/mahabdelkhalekk?t=AcNv9nnlaDmBp2s8Qp7UQw&s=09"
           >
             <span className="">Twitter</span> <FaTwitter size={20} />
           </a>

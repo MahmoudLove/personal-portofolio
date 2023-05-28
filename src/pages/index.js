@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
 import ProjectsSection from '@/components/ProjectsSection';
 import SkillsSection from '@/components/SkillsSection';
@@ -11,6 +12,7 @@ export default function HomePage() {
       <hr />
       <ProjectsSection />
       <hr />
+      <Footer />
     </div>
   );
 }
